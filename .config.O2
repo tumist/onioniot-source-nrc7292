@@ -2920,9 +2920,11 @@ CONFIG_PACKAGE_kmod-slhc=y
 # CONFIG_PACKAGE_kmod-slip is not set
 # CONFIG_PACKAGE_kmod-trelay is not set
 CONFIG_PACKAGE_kmod-tun=m
+CONFIG_PACKAGE_kmod-udptunnel4=m
+CONFIG_PACKAGE_kmod-udptunnel6=m
 # CONFIG_PACKAGE_kmod-veth is not set
 # CONFIG_PACKAGE_kmod-vxlan is not set
-# CONFIG_PACKAGE_kmod-wireguard is not set
+CONFIG_PACKAGE_kmod-wireguard=m
 
 #
 # Other modules
@@ -4372,7 +4374,7 @@ CONFIG_PACKAGE_libmicrohttpd-no-ssl=m
 # CONFIG_PACKAGE_libmilter-sendmail is not set
 CONFIG_PACKAGE_libminiupnpc=m
 CONFIG_PACKAGE_libmms=m
-# CONFIG_PACKAGE_libmnl is not set
+CONFIG_PACKAGE_libmnl=m
 # CONFIG_PACKAGE_libmodbus is not set
 CONFIG_PACKAGE_libmosquitto-nossl=m
 CONFIG_PACKAGE_libmosquitto-ssl=y
@@ -5669,8 +5671,8 @@ CONFIG_PACKAGE_strongswan-mod-xcbc=m
 # CONFIG_PACKAGE_uanytun-sslcrypt is not set
 # CONFIG_PACKAGE_vpnc is not set
 # CONFIG_PACKAGE_vpnc-scripts is not set
-# CONFIG_PACKAGE_wireguard is not set
-# CONFIG_PACKAGE_wireguard-tools is not set
+CONFIG_PACKAGE_wireguard=m
+CONFIG_PACKAGE_wireguard-tools=m
 # CONFIG_PACKAGE_xl2tpd is not set
 # CONFIG_PACKAGE_zerotier is not set
 

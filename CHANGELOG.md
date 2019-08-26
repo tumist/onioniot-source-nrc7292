@@ -222,6 +222,11 @@ Initial firmware sent to be flashed at the factory
 ### Build Notes
 Defining the changes in each build. *Note that if a number is missing, that build failed the deployment process.*
 
+#### b231
+*August 26, 2019*
+
+* Added wireguard package and associated dependencies to Onion package repo
+
 #### b230
 *August 1, 2019*
 

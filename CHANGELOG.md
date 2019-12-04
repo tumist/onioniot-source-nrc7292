@@ -222,7 +222,12 @@ Initial firmware sent to be flashed at the factory
 ### Build Notes
 Defining the changes in each build. *Note that if a number is missing, that build failed the deployment process.*
 
-#### b231
+#### b233
+*Dec 4, 2019*
+
+* Added `fbi` package to software repo
+
+#### b232, b231
 *August 26, 2019*
 
 * Added wireguard package and associated dependencies to Onion package repo

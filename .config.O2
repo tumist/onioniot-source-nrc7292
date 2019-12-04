@@ -2465,7 +2465,7 @@ CONFIG_PACKAGE_wireless-regdb=y
 # DejaVu
 #
 # CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuMathTeXGyre is not set
-# CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSans is not set
+CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSans=m
 # CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSans-Bold is not set
 # CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSans-BoldOblique is not set
 # CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSans-ExtraLight is not set
@@ -3326,6 +3326,8 @@ CONFIG_PACKAGE_node=m
 # CONFIG_PACKAGE_node-mozilla-iot-gateway is not set
 CONFIG_PACKAGE_node-npm=m
 # CONFIG_PACKAGE_node-serialport is not set
+# CONFIG_PACKAGE_nodejs is not set
+# CONFIG_PACKAGE_npm is not set
 
 #
 # PHP
@@ -3679,6 +3681,7 @@ CONFIG_PACKAGE_python-sqlite3=m
 CONFIG_PACKAGE_python-unittest=m
 # CONFIG_PACKAGE_python-unittest-src is not set
 CONFIG_PACKAGE_python-urllib3=m
+# CONFIG_PACKAGE_python-urllib3-src is not set
 CONFIG_PACKAGE_python-xml=m
 # CONFIG_PACKAGE_python-xml-src is not set
 CONFIG_PACKAGE_python-yaml=m
@@ -4233,6 +4236,7 @@ CONFIG_PACKAGE_libcap=y
 CONFIG_PACKAGE_libcares=y
 # CONFIG_PACKAGE_libcharset is not set
 # CONFIG_PACKAGE_libcoap is not set
+CONFIG_PACKAGE_libcomerr=y
 CONFIG_PACKAGE_libconfig=m
 CONFIG_PACKAGE_libcurl=y
 
@@ -4280,7 +4284,9 @@ CONFIG_LIBCURL_PROXY=y
 CONFIG_PACKAGE_libdaemon=y
 # CONFIG_PACKAGE_libdaq is not set
 CONFIG_PACKAGE_libdb47=m
+# CONFIG_PACKAGE_libdb47xx is not set
 # CONFIG_PACKAGE_libdbi is not set
+CONFIG_PACKAGE_libdbus=m
 # CONFIG_PACKAGE_libdevmapper is not set
 # CONFIG_PACKAGE_libdmapsharing is not set
 # CONFIG_PACKAGE_libdnet is not set
@@ -4289,9 +4295,6 @@ CONFIG_PACKAGE_libdb47=m
 CONFIG_PACKAGE_libedit=m
 CONFIG_PACKAGE_libelf1=y
 # CONFIG_PACKAGE_libasm is not set
-CONFIG_PACKAGE_libcomerr=y
-# CONFIG_PACKAGE_libdb47xx is not set
-CONFIG_PACKAGE_libdbus=m
 # CONFIG_PACKAGE_libdw is not set
 # CONFIG_PACKAGE_libecdsautil is not set
 # CONFIG_PACKAGE_libesmtp is not set
@@ -4305,32 +4308,33 @@ CONFIG_PACKAGE_libevent2=m
 # CONFIG_PACKAGE_libevent2-pthreads is not set
 # CONFIG_PACKAGE_libeventlog is not set
 # CONFIG_PACKAGE_libevhtp is not set
-# CONFIG_PACKAGE_libexif is not set
+CONFIG_PACKAGE_libexif=m
 CONFIG_PACKAGE_libexpat=y
 # CONFIG_PACKAGE_libexslt is not set
 CONFIG_PACKAGE_libext2fs=y
 # CONFIG_PACKAGE_libextractor is not set
-CONFIG_PACKAGE_libf2fs=m
-# CONFIG_PACKAGE_libfaad2 is not set
 # CONFIG_PACKAGE_libfastjson is not set
 CONFIG_PACKAGE_libfdisk=y
-# CONFIG_PACKAGE_libfdt is not set
 CONFIG_PACKAGE_libffi=m
+# CONFIG_PACKAGE_libfmt is not set
+CONFIG_PACKAGE_libfreefare=m
+# CONFIG_PACKAGE_libftdi is not set
+CONFIG_PACKAGE_libftdi1=y
+# CONFIG_PACKAGE_libgabe is not set
+CONFIG_PACKAGE_libgcrypt=m
+# CONFIG_PACKAGE_libgd is not set
+# CONFIG_PACKAGE_libgee is not set
+# CONFIG_PACKAGE_libglpk is not set
+CONFIG_PACKAGE_libf2fs=m
+# CONFIG_PACKAGE_libfaad2 is not set
+# CONFIG_PACKAGE_libfdt is not set
 CONFIG_PACKAGE_libffmpeg-audio-dec=m
 # CONFIG_PACKAGE_libffmpeg-custom is not set
 # CONFIG_PACKAGE_libffmpeg-full is not set
 # CONFIG_PACKAGE_libffmpeg-mini is not set
 CONFIG_PACKAGE_libflac=m
-# CONFIG_PACKAGE_libfmt is not set
-CONFIG_PACKAGE_libfreefare=m
 CONFIG_PACKAGE_libfreetype=m
-# CONFIG_PACKAGE_libftdi is not set
-CONFIG_PACKAGE_libftdi1=y
-CONFIG_PACKAGE_libgcrypt=m
-# CONFIG_PACKAGE_libgd is not set
 CONFIG_PACKAGE_libgdbm=m
-# CONFIG_PACKAGE_libgee is not set
-# CONFIG_PACKAGE_libglpk is not set
 CONFIG_PACKAGE_libgmp=y
 # CONFIG_PACKAGE_libgnurl is not set
 CONFIG_PACKAGE_libgpg-error=m
@@ -4412,7 +4416,6 @@ CONFIG_PACKAGE_libogg=m
 # CONFIG_PACKAGE_liboil is not set
 # CONFIG_PACKAGE_libopcodes is not set
 # CONFIG_PACKAGE_libopendkim is not set
-CONFIG_PACKAGE_libopenldap=m
 # CONFIG_PACKAGE_libopenobex is not set
 # CONFIG_PACKAGE_libopensc is not set
 CONFIG_PACKAGE_libopenzwave=m
@@ -4423,6 +4426,7 @@ CONFIG_PACKAGE_libout123=m
 # CONFIG_PACKAGE_libp11 is not set
 # CONFIG_PACKAGE_libpagekite is not set
 # CONFIG_PACKAGE_libpam is not set
+# CONFIG_PACKAGE_libpbc is not set
 CONFIG_PACKAGE_libpcap=m
 
 #
@@ -4608,6 +4612,7 @@ CONFIG_PACKAGE_zlib=y
 # CONFIG_LUCI_LANG_vi is not set
 # CONFIG_LUCI_LANG_zh-cn is not set
 # CONFIG_LUCI_LANG_zh-tw is not set
+# CONFIG_PACKAGE_luci-compat is not set
 # CONFIG_PACKAGE_luci-mod-admin-full is not set
 # CONFIG_PACKAGE_luci-mod-failsafe is not set
 # CONFIG_PACKAGE_luci-mod-freifunk is not set
@@ -4809,6 +4814,7 @@ CONFIG_MJPG_STREAMER_OUTPUT_HTTP=y
 # CONFIG_PACKAGE_vips is not set
 # CONFIG_PACKAGE_xupnpd is not set
 # CONFIG_PACKAGE_youtube-dl is not set
+# CONFIG_PACKAGE_youtube-dl-src is not set
 
 #
 # Network
@@ -5138,6 +5144,17 @@ CONFIG_PACKAGE_mdnsd=m
 # CONFIG_PACKAGE_openvswitch-ovsdb-client is not set
 # CONFIG_PACKAGE_openvswitch-python is not set
 # CONFIG_PACKAGE_openvswitch-vtep is not set
+
+#
+# OpenLDAP
+#
+CONFIG_PACKAGE_libopenldap=m
+CONFIG_OPENLDAP_DEBUG=y
+# CONFIG_OPENLDAP_MONITOR is not set
+# CONFIG_OPENLDAP_DB47 is not set
+# CONFIG_OPENLDAP_ICU is not set
+# CONFIG_PACKAGE_openldap-server is not set
+# CONFIG_PACKAGE_openldap-utils is not set
 
 #
 # Printing
@@ -5936,7 +5953,6 @@ CONFIG_PACKAGE_odhcpd_full_ext_cer_id=0
 # CONFIG_PACKAGE_odhcpd-ipv6only is not set
 # CONFIG_PACKAGE_ola is not set
 # CONFIG_PACKAGE_omcproxy is not set
-# CONFIG_PACKAGE_openldap-server is not set
 # CONFIG_PACKAGE_oping is not set
 # CONFIG_PACKAGE_pagekitec is not set
 # CONFIG_PACKAGE_pen is not set
@@ -5984,6 +6000,7 @@ CONFIG_PACKAGE_shellinabox=y
 # CONFIG_PACKAGE_socat is not set
 # CONFIG_PACKAGE_softflowd is not set
 # CONFIG_PACKAGE_soloscli is not set
+# CONFIG_PACKAGE_speedtest-netperf is not set
 # CONFIG_PACKAGE_stunnel is not set
 # CONFIG_PACKAGE_tayga is not set
 CONFIG_PACKAGE_tcpdump=m
@@ -6077,6 +6094,7 @@ CONFIG_PACKAGE_libonionpwmexp=y
 CONFIG_PACKAGE_libonionrelayexp=y
 # CONFIG_PACKAGE_libonionspi is not set
 # CONFIG_PACKAGE_libonionst7735 is not set
+# CONFIG_PACKAGE_libv8m-rb is not set
 # CONFIG_PACKAGE_node-oled-exp is not set
 # CONFIG_PACKAGE_node-pwm-exp is not set
 # CONFIG_PACKAGE_node-relay-exp is not set
@@ -6106,6 +6124,7 @@ CONFIG_PACKAGE_python3-spidev=m
 #
 # Network
 #
+# CONFIG_PACKAGE_device-client is not set
 CONFIG_PACKAGE_hostname-tool=y
 CONFIG_PACKAGE_ubidots-client=m
 # CONFIG_PACKAGE_wdb40 is not set
@@ -6133,6 +6152,11 @@ CONFIG_PACKAGE_oos-app-sparkfun-qwiic=m
 CONFIG_PACKAGE_oos-app-timelapse-camera=m
 
 #
+# Ralink
+#
+# CONFIG_PACKAGE_ralink-wifi-mt76x8 is not set
+
+#
 # Utilities
 #
 CONFIG_PACKAGE_adc-exp=m
@@ -6145,6 +6169,7 @@ CONFIG_PACKAGE_fast-gpio=y
 # CONFIG_PACKAGE_ili9341-test is not set
 # CONFIG_PACKAGE_neopixel-tool is not set
 CONFIG_PACKAGE_nfc-exp=m
+# CONFIG_PACKAGE_o2-wifi is not set
 CONFIG_PACKAGE_ogps=m
 CONFIG_PACKAGE_omega2-ctrl=y
 CONFIG_PACKAGE_omega2-pro-base=y
@@ -6154,8 +6179,10 @@ CONFIG_PACKAGE_ethernet-mode=y
 CONFIG_PACKAGE_onion-ubus=y
 CONFIG_PACKAGE_oupgrade=y
 CONFIG_PACKAGE_p44-ledchain=y
+# CONFIG_PACKAGE_setup-wizard is not set
 # CONFIG_PACKAGE_spi-tool is not set
 # CONFIG_PACKAGE_st7735-test is not set
+# CONFIG_PACKAGE_ubus-intf is not set
 CONFIG_PACKAGE_url-enc-dec=y
 
 #
@@ -6218,13 +6245,14 @@ CONFIG_PACKAGE_uboot-envtools=y
 # Compression
 #
 # CONFIG_PACKAGE_bsdtar is not set
+# CONFIG_PACKAGE_bsdtar-noopenssl is not set
 CONFIG_PACKAGE_bzip2=y
 # CONFIG_PACKAGE_gzip is not set
-# CONFIG_PACKAGE_lzmadec is not set
 # CONFIG_PACKAGE_lzmainfo is not set
 # CONFIG_PACKAGE_unrar is not set
 # CONFIG_PACKAGE_unzip is not set
 CONFIG_PACKAGE_xz-utils=y
+# CONFIG_PACKAGE_lzmadec is not set
 CONFIG_PACKAGE_xz=y
 # CONFIG_PACKAGE_xzdec is not set
 # CONFIG_PACKAGE_xzdiff is not set
@@ -6417,6 +6445,11 @@ CONFIG_PACKAGE_zoneinfo-core=m
 # CONFIG_PACKAGE_rrdtool1 is not set
 # CONFIG_PACKAGE_sqlite3-cli is not set
 # CONFIG_PACKAGE_unixodbc-tools is not set
+
+#
+# fbida
+#
+CONFIG_PACKAGE_fbi=m
 # CONFIG_PACKAGE_adb is not set
 # CONFIG_PACKAGE_ap51-flash is not set
 # CONFIG_PACKAGE_at is not set
@@ -6651,7 +6684,6 @@ CONFIG_PACKAGE_nfc-utils=m
 # CONFIG_PACKAGE_oath-toolkit is not set
 # CONFIG_PACKAGE_open-plc-utils is not set
 # CONFIG_PACKAGE_open2300 is not set
-# CONFIG_PACKAGE_openldap-utils is not set
 # CONFIG_PACKAGE_openobex is not set
 # CONFIG_PACKAGE_openobex-apps is not set
 # CONFIG_PACKAGE_openocd is not set
@@ -6773,4 +6805,4 @@ CONFIG_PACKAGE_xxd=m
 #
 # font-utils
 #
-# CONFIG_PACKAGE_fontconfig is not set
+CONFIG_PACKAGE_fontconfig=m

@@ -223,11 +223,16 @@ Initial firmware sent to be flashed at the factory
 Defining the changes in each build. *Note that if a number is missing, that build failed the deployment process.*
 
 #### b233
+*Dec 6, 2019*
+
+* Added Omega2 Dash device
+
+#### b232
 *Dec 4, 2019*
 
 * Added `fbi` package to software repo
 
-#### b232, b231
+#### b231
 *August 26, 2019*
 
 * Added wireguard package and associated dependencies to Onion package repo

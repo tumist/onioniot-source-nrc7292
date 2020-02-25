@@ -222,6 +222,11 @@ Initial firmware sent to be flashed at the factory
 ### Build Notes
 Defining the changes in each build. *Note that if a number is missing, that build failed the deployment process.*
 
+#### b234
+*Feb 25, 2020*
+
+* Omega2 Dash now shows a boot message on the physical display
+
 #### b233
 *Dec 6, 2019*
 

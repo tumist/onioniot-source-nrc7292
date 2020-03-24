@@ -222,8 +222,8 @@ Initial firmware sent to be flashed at the factory
 ### Build Notes
 Defining the changes in each build. *Note that if a number is missing, that build failed the deployment process.*
 
-#### b236, b235
-*Mar 19 & 20, 2020*
+#### b237, b236, b235
+*Mar 24,20,19 2020*
 
 * oupgrade updated, now includes:
     * ability to specify firmware API URL

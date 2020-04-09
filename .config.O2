@@ -57,6 +57,7 @@ CONFIG_TARGET_MULTI_PROFILE=y
 # CONFIG_TARGET_ramips_mt76x8_DEVICE_mt7628 is not set
 # CONFIG_TARGET_ramips_mt76x8_DEVICE_mac1200r-v2 is not set
 # CONFIG_TARGET_ramips_mt76x8_DEVICE_omega2 is not set
+# CONFIG_TARGET_ramips_mt76x8_DEVICE_omega2dash is not set
 # CONFIG_TARGET_ramips_mt76x8_DEVICE_omega2lte is not set
 # CONFIG_TARGET_ramips_mt76x8_DEVICE_omega2pro is not set
 # CONFIG_TARGET_ramips_mt76x8_DEVICE_omega2p is not set
@@ -95,6 +96,7 @@ CONFIG_TARGET_MULTI_PROFILE=y
 # CONFIG_TARGET_DEVICE_ramips_mt76x8_DEVICE_mt7628 is not set
 # CONFIG_TARGET_DEVICE_ramips_mt76x8_DEVICE_mac1200r-v2 is not set
 CONFIG_TARGET_DEVICE_ramips_mt76x8_DEVICE_omega2=y
+# CONFIG_TARGET_DEVICE_ramips_mt76x8_DEVICE_omega2dash is not set
 # CONFIG_TARGET_DEVICE_ramips_mt76x8_DEVICE_omega2lte is not set
 CONFIG_TARGET_DEVICE_ramips_mt76x8_DEVICE_omega2pro=y
 CONFIG_TARGET_DEVICE_ramips_mt76x8_DEVICE_omega2p=y
@@ -204,7 +206,7 @@ CONFIG_SIGNED_PACKAGES=y
 #
 # General build options
 #
-# CONFIG_DISPLAY_SUPPORT is not set
+CONFIG_DISPLAY_SUPPORT=y
 CONFIG_BUILD_PATENTED=y
 # CONFIG_BUILD_NLS is not set
 CONFIG_SHADOW_PASSWORDS=y
@@ -3102,6 +3104,13 @@ CONFIG_PACKAGE_kmod-usb2=y
 #
 # Video Support
 #
+# CONFIG_PACKAGE_kmod-backlight-pwm is not set
+# CONFIG_PACKAGE_kmod-fb is not set
+# CONFIG_PACKAGE_kmod-fb-cfb-copyarea is not set
+# CONFIG_PACKAGE_kmod-fb-cfb-fillrect is not set
+# CONFIG_PACKAGE_kmod-fb-cfb-imgblt is not set
+# CONFIG_PACKAGE_kmod-fb-sys-fops is not set
+# CONFIG_PACKAGE_kmod-fbtft-support is not set
 CONFIG_PACKAGE_kmod-video-core=y
 # CONFIG_PACKAGE_kmod-video-cpia2 is not set
 # CONFIG_PACKAGE_kmod-video-gspca-core is not set
@@ -4236,7 +4245,6 @@ CONFIG_PACKAGE_libcap=y
 CONFIG_PACKAGE_libcares=y
 # CONFIG_PACKAGE_libcharset is not set
 # CONFIG_PACKAGE_libcoap is not set
-CONFIG_PACKAGE_libcomerr=y
 CONFIG_PACKAGE_libconfig=m
 CONFIG_PACKAGE_libcurl=y
 
@@ -4284,9 +4292,7 @@ CONFIG_LIBCURL_PROXY=y
 CONFIG_PACKAGE_libdaemon=y
 # CONFIG_PACKAGE_libdaq is not set
 CONFIG_PACKAGE_libdb47=m
-# CONFIG_PACKAGE_libdb47xx is not set
 # CONFIG_PACKAGE_libdbi is not set
-CONFIG_PACKAGE_libdbus=m
 # CONFIG_PACKAGE_libdevmapper is not set
 # CONFIG_PACKAGE_libdmapsharing is not set
 # CONFIG_PACKAGE_libdnet is not set
@@ -4295,6 +4301,9 @@ CONFIG_PACKAGE_libdbus=m
 CONFIG_PACKAGE_libedit=m
 CONFIG_PACKAGE_libelf1=y
 # CONFIG_PACKAGE_libasm is not set
+CONFIG_PACKAGE_libcomerr=y
+# CONFIG_PACKAGE_libdb47xx is not set
+CONFIG_PACKAGE_libdbus=m
 # CONFIG_PACKAGE_libdw is not set
 # CONFIG_PACKAGE_libecdsautil is not set
 # CONFIG_PACKAGE_libesmtp is not set
@@ -4313,28 +4322,28 @@ CONFIG_PACKAGE_libexpat=y
 # CONFIG_PACKAGE_libexslt is not set
 CONFIG_PACKAGE_libext2fs=y
 # CONFIG_PACKAGE_libextractor is not set
-# CONFIG_PACKAGE_libfastjson is not set
-CONFIG_PACKAGE_libfdisk=y
-CONFIG_PACKAGE_libffi=m
-# CONFIG_PACKAGE_libfmt is not set
-CONFIG_PACKAGE_libfreefare=m
-# CONFIG_PACKAGE_libftdi is not set
-CONFIG_PACKAGE_libftdi1=y
-# CONFIG_PACKAGE_libgabe is not set
-CONFIG_PACKAGE_libgcrypt=m
-# CONFIG_PACKAGE_libgd is not set
-# CONFIG_PACKAGE_libgee is not set
-# CONFIG_PACKAGE_libglpk is not set
 CONFIG_PACKAGE_libf2fs=m
 # CONFIG_PACKAGE_libfaad2 is not set
+# CONFIG_PACKAGE_libfastjson is not set
+CONFIG_PACKAGE_libfdisk=y
 # CONFIG_PACKAGE_libfdt is not set
+CONFIG_PACKAGE_libffi=m
 CONFIG_PACKAGE_libffmpeg-audio-dec=m
 # CONFIG_PACKAGE_libffmpeg-custom is not set
 # CONFIG_PACKAGE_libffmpeg-full is not set
 # CONFIG_PACKAGE_libffmpeg-mini is not set
 CONFIG_PACKAGE_libflac=m
+# CONFIG_PACKAGE_libfmt is not set
+CONFIG_PACKAGE_libfreefare=m
 CONFIG_PACKAGE_libfreetype=m
+# CONFIG_PACKAGE_libftdi is not set
+CONFIG_PACKAGE_libftdi1=y
+# CONFIG_PACKAGE_libgabe is not set
+CONFIG_PACKAGE_libgcrypt=m
+# CONFIG_PACKAGE_libgd is not set
 CONFIG_PACKAGE_libgdbm=m
+# CONFIG_PACKAGE_libgee is not set
+# CONFIG_PACKAGE_libglpk is not set
 CONFIG_PACKAGE_libgmp=y
 # CONFIG_PACKAGE_libgnurl is not set
 CONFIG_PACKAGE_libgpg-error=m
@@ -4368,7 +4377,7 @@ CONFIG_PACKAGE_libltdl=m
 # CONFIG_PACKAGE_liblucihttp is not set
 # CONFIG_PACKAGE_liblucihttp-lua is not set
 # CONFIG_PACKAGE_liblz4 is not set
-# CONFIG_PACKAGE_liblzo is not set
+CONFIG_PACKAGE_liblzo=m
 CONFIG_PACKAGE_libmad=m
 # CONFIG_PACKAGE_libmagic is not set
 CONFIG_PACKAGE_libmariadbclient=m
@@ -4416,6 +4425,7 @@ CONFIG_PACKAGE_libogg=m
 # CONFIG_PACKAGE_liboil is not set
 # CONFIG_PACKAGE_libopcodes is not set
 # CONFIG_PACKAGE_libopendkim is not set
+CONFIG_PACKAGE_libopenldap=m
 # CONFIG_PACKAGE_libopenobex is not set
 # CONFIG_PACKAGE_libopensc is not set
 CONFIG_PACKAGE_libopenzwave=m
@@ -4612,7 +4622,6 @@ CONFIG_PACKAGE_zlib=y
 # CONFIG_LUCI_LANG_vi is not set
 # CONFIG_LUCI_LANG_zh-cn is not set
 # CONFIG_LUCI_LANG_zh-tw is not set
-# CONFIG_PACKAGE_luci-compat is not set
 # CONFIG_PACKAGE_luci-mod-admin-full is not set
 # CONFIG_PACKAGE_luci-mod-failsafe is not set
 # CONFIG_PACKAGE_luci-mod-freifunk is not set
@@ -4814,7 +4823,6 @@ CONFIG_MJPG_STREAMER_OUTPUT_HTTP=y
 # CONFIG_PACKAGE_vips is not set
 # CONFIG_PACKAGE_xupnpd is not set
 # CONFIG_PACKAGE_youtube-dl is not set
-# CONFIG_PACKAGE_youtube-dl-src is not set
 
 #
 # Network
@@ -5144,17 +5152,6 @@ CONFIG_PACKAGE_mdnsd=m
 # CONFIG_PACKAGE_openvswitch-ovsdb-client is not set
 # CONFIG_PACKAGE_openvswitch-python is not set
 # CONFIG_PACKAGE_openvswitch-vtep is not set
-
-#
-# OpenLDAP
-#
-CONFIG_PACKAGE_libopenldap=m
-CONFIG_OPENLDAP_DEBUG=y
-# CONFIG_OPENLDAP_MONITOR is not set
-# CONFIG_OPENLDAP_DB47 is not set
-# CONFIG_OPENLDAP_ICU is not set
-# CONFIG_PACKAGE_openldap-server is not set
-# CONFIG_PACKAGE_openldap-utils is not set
 
 #
 # Printing
@@ -5583,10 +5580,51 @@ CONFIG_PACKAGE_asterisk13-res-rtp-asterisk=m
 # CONFIG_PACKAGE_ocserv is not set
 # CONFIG_PACKAGE_openconnect is not set
 # CONFIG_PACKAGE_opennhrp is not set
-# CONFIG_PACKAGE_openvpn-easy-rsa is not set
-# CONFIG_PACKAGE_openvpn-mbedtls is not set
-# CONFIG_PACKAGE_openvpn-nossl is not set
-# CONFIG_PACKAGE_openvpn-openssl is not set
+CONFIG_PACKAGE_openvpn-easy-rsa=m
+CONFIG_PACKAGE_openvpn-mbedtls=m
+CONFIG_OPENVPN_mbedtls_ENABLE_LZO=y
+CONFIG_OPENVPN_mbedtls_ENABLE_LZ4=y
+# CONFIG_OPENVPN_mbedtls_ENABLE_X509_ALT_USERNAME is not set
+CONFIG_OPENVPN_mbedtls_ENABLE_SERVER=y
+# CONFIG_OPENVPN_mbedtls_ENABLE_MANAGEMENT is not set
+CONFIG_OPENVPN_mbedtls_ENABLE_HTTP=y
+CONFIG_OPENVPN_mbedtls_ENABLE_SOCKS=y
+CONFIG_OPENVPN_mbedtls_ENABLE_FRAGMENT=y
+CONFIG_OPENVPN_mbedtls_ENABLE_MULTIHOME=y
+CONFIG_OPENVPN_mbedtls_ENABLE_PORT_SHARE=y
+CONFIG_OPENVPN_mbedtls_ENABLE_DEF_AUTH=y
+CONFIG_OPENVPN_mbedtls_ENABLE_PF=y
+# CONFIG_OPENVPN_mbedtls_ENABLE_IPROUTE2 is not set
+CONFIG_OPENVPN_mbedtls_ENABLE_SMALL=y
+CONFIG_PACKAGE_openvpn-nossl=m
+CONFIG_OPENVPN_nossl_ENABLE_LZO=y
+CONFIG_OPENVPN_nossl_ENABLE_LZ4=y
+CONFIG_OPENVPN_nossl_ENABLE_SERVER=y
+# CONFIG_OPENVPN_nossl_ENABLE_MANAGEMENT is not set
+CONFIG_OPENVPN_nossl_ENABLE_HTTP=y
+CONFIG_OPENVPN_nossl_ENABLE_SOCKS=y
+CONFIG_OPENVPN_nossl_ENABLE_FRAGMENT=y
+CONFIG_OPENVPN_nossl_ENABLE_MULTIHOME=y
+CONFIG_OPENVPN_nossl_ENABLE_PORT_SHARE=y
+CONFIG_OPENVPN_nossl_ENABLE_DEF_AUTH=y
+CONFIG_OPENVPN_nossl_ENABLE_PF=y
+# CONFIG_OPENVPN_nossl_ENABLE_IPROUTE2 is not set
+CONFIG_OPENVPN_nossl_ENABLE_SMALL=y
+CONFIG_PACKAGE_openvpn-openssl=m
+CONFIG_OPENVPN_openssl_ENABLE_LZO=y
+CONFIG_OPENVPN_openssl_ENABLE_LZ4=y
+# CONFIG_OPENVPN_openssl_ENABLE_X509_ALT_USERNAME is not set
+CONFIG_OPENVPN_openssl_ENABLE_SERVER=y
+# CONFIG_OPENVPN_openssl_ENABLE_MANAGEMENT is not set
+CONFIG_OPENVPN_openssl_ENABLE_HTTP=y
+CONFIG_OPENVPN_openssl_ENABLE_SOCKS=y
+CONFIG_OPENVPN_openssl_ENABLE_FRAGMENT=y
+CONFIG_OPENVPN_openssl_ENABLE_MULTIHOME=y
+CONFIG_OPENVPN_openssl_ENABLE_PORT_SHARE=y
+CONFIG_OPENVPN_openssl_ENABLE_DEF_AUTH=y
+CONFIG_OPENVPN_openssl_ENABLE_PF=y
+# CONFIG_OPENVPN_openssl_ENABLE_IPROUTE2 is not set
+CONFIG_OPENVPN_openssl_ENABLE_SMALL=y
 # CONFIG_PACKAGE_pptpd is not set
 # CONFIG_PACKAGE_softethervpn is not set
 # CONFIG_PACKAGE_sstp-client is not set
@@ -5953,6 +5991,7 @@ CONFIG_PACKAGE_odhcpd_full_ext_cer_id=0
 # CONFIG_PACKAGE_odhcpd-ipv6only is not set
 # CONFIG_PACKAGE_ola is not set
 # CONFIG_PACKAGE_omcproxy is not set
+# CONFIG_PACKAGE_openldap-server is not set
 # CONFIG_PACKAGE_oping is not set
 # CONFIG_PACKAGE_pagekitec is not set
 # CONFIG_PACKAGE_pen is not set
@@ -6000,7 +6039,6 @@ CONFIG_PACKAGE_shellinabox=y
 # CONFIG_PACKAGE_socat is not set
 # CONFIG_PACKAGE_softflowd is not set
 # CONFIG_PACKAGE_soloscli is not set
-# CONFIG_PACKAGE_speedtest-netperf is not set
 # CONFIG_PACKAGE_stunnel is not set
 # CONFIG_PACKAGE_tayga is not set
 CONFIG_PACKAGE_tcpdump=m
@@ -6053,6 +6091,7 @@ CONFIG_PACKAGE_wwan=m
 # Base system
 #
 CONFIG_PACKAGE_omega2-base=y
+# CONFIG_PACKAGE_omega2-dash-base is not set
 # CONFIG_PACKAGE_omega2-lte-base is not set
 CONFIG_PACKAGE_onion-repo-keys=y
 
@@ -6245,14 +6284,13 @@ CONFIG_PACKAGE_uboot-envtools=y
 # Compression
 #
 # CONFIG_PACKAGE_bsdtar is not set
-# CONFIG_PACKAGE_bsdtar-noopenssl is not set
 CONFIG_PACKAGE_bzip2=y
 # CONFIG_PACKAGE_gzip is not set
+# CONFIG_PACKAGE_lzmadec is not set
 # CONFIG_PACKAGE_lzmainfo is not set
 # CONFIG_PACKAGE_unrar is not set
 # CONFIG_PACKAGE_unzip is not set
 CONFIG_PACKAGE_xz-utils=y
-# CONFIG_PACKAGE_lzmadec is not set
 CONFIG_PACKAGE_xz=y
 # CONFIG_PACKAGE_xzdec is not set
 # CONFIG_PACKAGE_xzdiff is not set
@@ -6591,6 +6629,7 @@ CONFIG_PACKAGE_dmesg=m
 # CONFIG_PACKAGE_elektra-kdb is not set
 # CONFIG_PACKAGE_evtest is not set
 # CONFIG_PACKAGE_extract is not set
+# CONFIG_PACKAGE_fbtest is not set
 # CONFIG_PACKAGE_fdt-utils is not set
 # CONFIG_PACKAGE_file is not set
 # CONFIG_PACKAGE_findutils-find is not set
@@ -6684,6 +6723,7 @@ CONFIG_PACKAGE_nfc-utils=m
 # CONFIG_PACKAGE_oath-toolkit is not set
 # CONFIG_PACKAGE_open-plc-utils is not set
 # CONFIG_PACKAGE_open2300 is not set
+# CONFIG_PACKAGE_openldap-utils is not set
 # CONFIG_PACKAGE_openobex is not set
 # CONFIG_PACKAGE_openobex-apps is not set
 # CONFIG_PACKAGE_openocd is not set

@@ -3576,6 +3576,7 @@ CONFIG_PACKAGE_perlbase-xsloader=m
 # CONFIG_PACKAGE_flup is not set
 # CONFIG_PACKAGE_gunicorn is not set
 # CONFIG_PACKAGE_jdcal is not set
+CONFIG_PACKAGE_lv_micropython=m
 # CONFIG_PACKAGE_micropython is not set
 # CONFIG_PACKAGE_micropython-lib is not set
 # CONFIG_PACKAGE_openpyxl is not set

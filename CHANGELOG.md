@@ -222,6 +222,12 @@ Initial firmware sent to be flashed at the factory
 ### Build Notes
 Defining the changes in each build. *Note that if a number is missing, that build failed the deployment process.*
 
+#### b240
+*June 20, 2020*
+
+* Python scripts in repo updated to python3 syntax
+* Now building lv_micropython as a package for use with Omega2 Dash
+
 #### b239, b238
 *Apr 8, 2020*
 

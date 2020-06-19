@@ -223,7 +223,13 @@ Initial firmware sent to be flashed at the factory
 Defining the changes in each build. *Note that if a number is missing, that build failed the deployment process.*
 
 #### b240
-*June 20, 2020*
+*June 19, 2020*
+
+* Update to omega2-lte package - fix for disabling GNSS
+
+
+#### b240
+*June 10, 2020*
 
 * Python scripts in repo updated to python3 syntax
 * Now building lv_micropython as a package for use with Omega2 Dash

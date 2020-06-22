@@ -222,11 +222,15 @@ Initial firmware sent to be flashed at the factory
 ### Build Notes
 Defining the changes in each build. *Note that if a number is missing, that build failed the deployment process.*
 
+#### b241
+*June 22, 2020*
+
+* Update to omega2-lte package - fix for properly enabling/disabling cellular data connection
+
 #### b240
 *June 19, 2020*
 
 * Update to omega2-lte package - fix for disabling GNSS
-
 
 #### b240
 *June 10, 2020*

@@ -222,6 +222,11 @@ Initial firmware sent to be flashed at the factory
 ### Build Notes
 Defining the changes in each build. *Note that if a number is missing, that build failed the deployment process.*
 
+#### b242
+*Juky 4, 2020*
+
+* Update to lv_micropython package - fix for touch input! Micropython with lvgl now works 100% on the Omega2 Dash
+
 #### b241
 *June 22, 2020*
 

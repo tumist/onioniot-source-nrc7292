@@ -222,8 +222,13 @@ Initial firmware sent to be flashed at the factory
 ### Build Notes
 Defining the changes in each build. *Note that if a number is missing, that build failed the deployment process.*
 
+#### b243
+*July 14, 2020*
+
+* Added `kmod-i2c-gpio-custom` and related kernel modules to package repo
+
 #### b242
-*Juky 4, 2020*
+*July 4, 2020*
 
 * Update to lv_micropython package - fix for touch input! Micropython with lvgl now works 100% on the Omega2 Dash
 

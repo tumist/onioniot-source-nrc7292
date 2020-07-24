@@ -55,7 +55,7 @@ Next step forward for the Omega2
 
 * OnionOS is now part of the firwmare, it features:
 	* An App Manager
-	* A new and improved, built-in Setup Wizard 
+	* A new and improved, built-in Setup Wizard
 
 > Based on lede-17.01 branch
 
@@ -64,7 +64,7 @@ Next step forward for the Omega2
 
 A whole slew of updates, the most major being the new WiFi Warp Core - Enhanced MT7688 WiFi Driver
 
-* Setup Wizard updated for compatibility new WiFi Warp Core and be more communicative with the user 
+* Setup Wizard updated for compatibility new WiFi Warp Core and be more communicative with the user
 * Console Settings app updated for compatibility with WiFi Warp Core
 * Updates to onion ubus package, base-www, et al
 
@@ -222,22 +222,22 @@ Initial firmware sent to be flashed at the factory
 ### Build Notes
 Defining the changes in each build. *Note that if a number is missing, that build failed the deployment process.*
 
-#### b243
+#### b244
 *July 14, 2020*
 
 * Added `kmod-i2c-gpio-custom` and related kernel modules to package repo
 
-#### b242
+#### b243
 *July 4, 2020*
 
 * Update to lv_micropython package - fix for touch input! Micropython with lvgl now works 100% on the Omega2 Dash
 
-#### b241
+#### b242
 *June 22, 2020*
 
 * Update to omega2-lte package - fix for properly enabling/disabling cellular data connection
 
-#### b240
+#### b241
 *June 19, 2020*
 
 * Update to omega2-lte package - fix for disabling GNSS
@@ -288,9 +288,9 @@ Defining the changes in each build. *Note that if a number is missing, that buil
     * New firmware default: ethernet port is set to host mode - will be set to client mode automatically once RF calibration is complete
     * New actions at boot:
         * If default MAC address is detected, will activate telnet server required for RF calibration
-        * If unique MAC address is detected (RF calibration is complete), the ethernet port will be set to client mode, if not already 
+        * If unique MAC address is detected (RF calibration is complete), the ethernet port will be set to client mode, if not already
     * Package updates to make this happen:
-        * Onion Script: 
+        * Onion Script:
             * Can now check ethernet port mode based on network config file
             * Ethernet mode init.d script runs sooner in boot process and takes action based on above
         * Hostname tool:
@@ -341,7 +341,7 @@ Defining the changes in each build. *Note that if a number is missing, that buil
 #### b221
 *April 23, 2019*
 
-* Added `devmem` command to busybox 
+* Added `devmem` command to busybox
 
 #### b220
 *April 12, 2019*
@@ -362,7 +362,7 @@ Defining the changes in each build. *Note that if a number is missing, that buil
 * Memory leak fixes and code clean-up of fast-gpio utility
 * omega2-ctrl utility gpiomux option now has an alias: pinmux
 
-#### b217 
+#### b217
 *Feb 26, 2019*
 
 **Moving to v0.3.2**
@@ -460,7 +460,7 @@ Defining the changes in each build. *Note that if a number is missing, that buil
 * Writing wifi LED to wireless config
 	* Had to update ramips.sh file to bring back `ramips_board_name` function
 
-#### b202 
+#### b202
 *Nov 28, 2018*
 
 * Added patches to implement support for same SPI behaviour as in lede-17.01 based firmware
@@ -500,8 +500,8 @@ Defining the changes in each build. *Note that if a number is missing, that buil
 
 **Updating to version 0.2.1**
 
-* OnionOS 
-	* OnionOS is now included in firmware 
+* OnionOS
+	* OnionOS is now included in firmware
 	* Now includes a new and improved built-in Setup Wizard
 	* Created OnionOS App to install the Legacy Console and make it available as an OnionOS App
 	* Code Editor is no longer bundled with OnionOS - can be installed through App Manager
@@ -522,7 +522,7 @@ Defining the changes in each build. *Note that if a number is missing, that buil
 * Added Python3 module for ADC Expansion
 * Factory partition is now writeable
 
-#### b195 
+#### b195
 *August 31, 2018*
 
 * Added support for use of hardware PWM units on GPIO18 and 19
@@ -556,14 +556,14 @@ Defining the changes in each build. *Note that if a number is missing, that buil
 * Added `adc-exp` and associated Python module to Onion package repo
 * Now building kernel modules required for sw spi bitbang on gpio - included in Onion package repo
 
-#### b190 
+#### b190
 *July 3, 2018*
 
 * Updated Onion Script
 * Pushed out OnionOS and Camera App updates
 
 #### b189
-*July 3, 2018* 
+*July 3, 2018*
 
 * Upped omega2-ctrl package version to reflect code changes a while ago
 * New version of OnionOS released, as well as a new Camera app
@@ -583,7 +583,7 @@ Defining the changes in each build. *Note that if a number is missing, that buil
 #### b187
 *June 4, 2018*
 
-* Added Onion command line utility (first iteration - only configures ethernet port for now) 
+* Added Onion command line utility (first iteration - only configures ethernet port for now)
 * Warp Core Update - Added network testing tool
 * Added kernel modules to Onion package repo: `kmod-pps-ldisc`, `kmod-usb-net-rndis`, `kmod-usb-net-cdc-ether`
 
@@ -607,7 +607,7 @@ Defining the changes in each build. *Note that if a number is missing, that buil
 
 * OnionOS Update
 	* Added Battery Level Monitoring w/ Power Dock 2 App
-	* Implemented automatic app loading based on what is installed 
+	* Implemented automatic app loading based on what is installed
 
 #### b183
 *Apr 15, 2018*
@@ -649,7 +649,7 @@ Defining the changes in each build. *Note that if a number is missing, that buil
 *Apr 2, 2018*
 
 * Added support for I2S - MAX98090 codec
-* Updated Wifi Warp Core 
+* Updated Wifi Warp Core
 	* Better reconnect timing
 	* Print statement when apcli0 link is up
 * Added `nfc` packages to the package repo
@@ -665,7 +665,7 @@ Defining the changes in each build. *Note that if a number is missing, that buil
 	* console install tool - updated to work regardless of network configuration, specifically, works with ethernet connectivity now
 	* i2c exp driver -  i2c library updated to fix memory overwrite bug
 	* python gpio module - updated to alleviate bug with setting output gpios
-	* avrdude - upped version number to avoid installing broken v6.3 
+	* avrdude - upped version number to avoid installing broken v6.3
 * Added `nfc-utils` and `libnfc` packages
 
 #### b175
@@ -678,7 +678,7 @@ Defining the changes in each build. *Note that if a number is missing, that buil
 * Onion Console v0.1.4: works with WiFi Warp Core, better UX - uses base64 encoding to ensure more flexibility with input, fixed terminal app - now accessible regardless of network configuration
 * Setup Wizard v0.3: works with WiFi Warp Core, more communicative with the user, better UX - uses base64 encoding to ensure more flexibility with input
 * Onion Ubus v0.3: updates to wifi scan to reflect new data coming from wifi scan (RSSI, encryption strings), fixes for wifisetup
-* Tools to perform base64 and URL encode/decode installed 
+* Tools to perform base64 and URL encode/decode installed
 * Hostname Fix tool: compatible with Warp Core, more flexible - can work with any root basename
 
 
@@ -696,7 +696,7 @@ Defining the changes in each build. *Note that if a number is missing, that buil
 
 * Added `python-dev` package to Onion Package Repo
 
-#### b172 
+#### b172
 *August 24, 2017*
 
 * Added back mountd package to firmware
@@ -802,7 +802,7 @@ Added following packages to Onion repo:
 
 * Fix for issue with hostname fixing tool that popped up, now works correctly in all cases
 
-#### b153 
+#### b153
 *February 6, 2017*
 
 * Now also compiling the `bc` package for the repo
@@ -819,7 +819,7 @@ Added following packages to Onion repo:
 * Infra: added option for quick (essential) compile
 * Infra: reorganized patches
 
-#### b150 
+#### b150
 *January 20, 2017*
 
 * Addition of micropython and several Python modules to package repo:

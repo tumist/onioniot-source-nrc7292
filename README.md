@@ -18,29 +18,17 @@ What's covered in this document:
 - [Step 1: Preparing the Build System](#step-1-preparing-the-build-system)
   * [Recommended Machine Specs](#recommended-machine-specs)
   * [Options for Using the Build System](#options-for-using-the-build-system)
-    + [Option A: Using the Docker Image](#option-a-using-the-docker-image)
-    + [Option B: Using a Linux System](#option-b-using-a-linux-system)
   * [Updating the Build System](#updating-the-build-system)
-    + [Updating the Package Feeds](#updating-the-package-feeds)
-      - [Updating the Onion Package Feed](#updating-the-onion-package-feed)
-      - [Updating All Feeds](#updating-all-feeds)
-      - ["Installing" New Packages](#installing-new-packages)
-    + [Grabbing the Latest Build System Code](#grabbing-the-latest-build-system-code)
 - [Step 2: Compiling the Build System](#step-2-compiling-the-build-system)
+  * [How to Compile](#how-to-compile)
   * [Multi-Core Compilation](#multi-core-compilation)
   * [Reducing Compile Time with the Minimal Build Configuration](#reducing-compile-time-with-the-minimal-build-configuration)
   * [Where to Find the Compile Output](#where-to-find-the-compile-output)
-    + [Firmware Images](#firmware-images)
-    + [Software Packages](#software-packages)
   * [How to Debug Compilation Issues](#how-to-debug-compilation-issues)
 - [Step 3: Customizing the Firmware Image](#step-3-customizing-the-firmware-image)
   * [Choosing which Packages to Include in the Firmware](#choosing-which-packages-to-include-in-the-firmware)
-    + [Tip: Reducing Firmware Image Size](#tip-reducing-firmware-image-size)
-    + [Tip: Kernel Modules](#tip-kernel-modules)
-    + [Tip: Custom Web Apps or Pages](#tip-custom-web-apps-or-pages)
   * [Adding Custom Files to the Firmware Image](#adding-custom-files-to-the-firmware-image)
   * [Making your Own Software Packages](#making-your-own-software-packages)
-    + [Examples of Package Makefiles](#examples-of-package-makefiles)
 - [Step 4: Deploying your Custom Firmware to Devices](#step-4-deploying-your-custom-firmware-to-devices)
   * [Manually Flashing the Firmware](#manually-flashing-the-firmware)
   * [More Control over Firmware Updates](#more-control-over-firmware-updates)
@@ -63,6 +51,19 @@ But this shouldn't be too much of a cause for concern since bricked devices can 
 # Step 1: Preparing the Build System
 
 **We strongly recommend first building firmware with the default configuration and THEN adding your own customizations**
+
+What's covered in this step:
+
+* [Recommended Machine Specs](#recommended-machine-specs)
+* [Options for Using the Build System](#options-for-using-the-build-system)
+	+ [Option A: Using the Docker Image](#option-a-using-the-docker-image)
+	+ [Option B: Using a Linux System](#option-b-using-a-linux-system)
+* [Updating the Build System](#updating-the-build-system)
+	+ [Updating the Package Feeds](#updating-the-package-feeds)
+		- [Updating the Onion Package Feed](#updating-the-onion-package-feed)
+		- [Updating All Feeds](#updating-all-feeds)
+		- ["Installing" New Packages](#installing-new-packages)
+	+ [Grabbing the Latest Build System Code](#grabbing-the-latest-build-system-code)
 
 ## Recommended Machine Specs
 
@@ -173,6 +174,18 @@ If you've made modifications to which packages are built/included in the firmwar
 
 # Step 2: Compiling the Build System
 
+What's covered in this step:
+
+* [How to Compile](#how-to-compile)
+* [Multi-Core Compilation](#multi-core-compilation)
+* [Reducing Compile Time with the Minimal Build Configuration](#reducing-compile-time-with-the-minimal-build-configuration)
+* [Where to Find the Compile Output](#where-to-find-the-compile-output)
+	+ [Firmware Images](#firmware-images)
+	+ [Software Packages](#software-packages)
+* [How to Debug Compilation Issues](#how-to-debug-compilation-issues)
+
+## How to Compile
+
 Run this command to compile the build system:
 
 ```
@@ -238,9 +251,20 @@ The error messages will point you in the direction of the package responsible fo
 
 Now that you've successfully prepared and compiled the build system, you're ready to make customizations to suit your individual needs!
 
+What's covered in this step:
+
+* [Choosing which Packages to Include in the Firmware](#choosing-which-packages-to-include-in-the-firmware)
+	+ [Tip: Reducing Firmware Image Size](#tip-reducing-firmware-image-size)
+	+ [Tip: Kernel Modules](#tip-kernel-modules)
+	+ [Tip: Custom Web Apps or Pages](#tip-custom-web-apps-or-pages)
+* [Adding Custom Files to the Firmware Image](#adding-custom-files-to-the-firmware-image)
+* [Making your Own Software Packages](#making-your-own-software-packages)
+	+ [Examples of Package Makefiles](#examples-of-package-makefiles)
+
 **Refer to [Step 2: Compiling the Build System](#step-2-compiling-the-build-system) for info on building and debugging.**
 
 See the [OpenWRT documentation on the build system](https://openwrt.org/docs/guide-developer/build-system/use-buildsystem) for more details.
+
 
 ## Choosing which Packages to Include in the Firmware
 
@@ -354,6 +378,13 @@ Specific examples on types of packages:
 
 Once you've built your own firmware images, you'll want to flash the image to a device. And potentially start thinking about how to update devices in the field.
 
+What's covered in this step:
+
+* [Manually Flashing the Firmware](#manually-flashing-the-firmware)
+* [More Control over Firmware Updates](#more-control-over-firmware-updates)
+* [Hosting your own Firmware Server](#hosting-your-own-firmware-server)
+
+
 ## Manually Flashing the Firmware
 
 To flash the output firmware image on your device, you will need to:
@@ -363,7 +394,7 @@ To flash the output firmware image on your device, you will need to:
 
 For details on this process, see the [Onion documentation article on manual firmware installation](http://docs.onion.io/omega2-docs/manual-firmware-installation.html).
 
-Keep in mind Step 1 will be different in your case since you'll want to use your own firmware image. And not a firmware image from the Onion firmware repository.
+Keep in mind Step 1 from the article will be different in your case since you'll want to use your own firmware image. And not a firmware image from the Onion firmware repository.
 
 **When to use this method:** During development when the firmware is changing rapidly *(since this is a quick but manual process)*
 

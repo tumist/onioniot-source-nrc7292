@@ -33,8 +33,10 @@ What's covered in this document:
   * [Manually Flashing the Firmware](#manually-flashing-the-firmware)
   * [More Control over Firmware Updates](#more-control-over-firmware-updates)
   * [Hosting your own Firmware Server](#hosting-your-own-firmware-server)
+- [Contributing](#contributing)
 - [Appendix](#appendix)
   * [Notes on the Build System](#notes-on-the-build-system)
+  * [Working with the Build System Configuration File](#working-with-the-build-system-configuration-file)
   * [Additional Reading](#additional-reading)
 
 
@@ -67,8 +69,12 @@ What's covered in this step:
 
 ## Recommended Machine Specs
 
-* At least 4GB RAM
+Minimum specs:
+
+* At least 8GB RAM
 * A modern, powerful CPU - the more cores on the processor, the faster the build system compilation
+
+For reference, at Onion, we generally use a server (like AWS EC2) when working with the build system.
 
 ## Options for Using the Build System
 
@@ -177,14 +183,25 @@ If you've made modifications to which packages are built/included in the firmwar
 What's covered in this step:
 
 * [How to Compile](#how-to-compile)
+  + [The Compile Command](#the-compile-command)
 * [Multi-Core Compilation](#multi-core-compilation)
 * [Reducing Compile Time with the Minimal Build Configuration](#reducing-compile-time-with-the-minimal-build-configuration)
 * [Where to Find the Compile Output](#where-to-find-the-compile-output)
-	+ [Firmware Images](#firmware-images)
-	+ [Software Packages](#software-packages)
+  + [Firmware Images](#firmware-images)
+  + [Software Packages](#software-packages)
 * [How to Debug Compilation Issues](#how-to-debug-compilation-issues)
 
 ## How to Compile
+
+**Optional:** to make the compilation MUCH quicker, run the following command:
+
+```
+python scripts/onion-setup-build.py -c .config.O2-minimum
+```
+
+> Learn more about minimum build [below](#reducing-compile-time-with-the-minimal-build-configuration).
+
+### The Compile Command
 
 Run this command to compile the build system:
 
@@ -192,9 +209,11 @@ Run this command to compile the build system:
 make
 ```
 
+> The compilation can take some time! On the scale of hours depending on your machine. See the two following sections for ideas on reducing compile time.
+
 This will create:
 
-* Firmware images for the Omega2 and Omega2+ (same as those released by Onion)
+* Firmware images for the Omega2, Omega2+, and Omega2 Pro (same as those released by Onion)
 * Software packages (every package included in the firmware and included in the [Onion Package Repo](http://repo.onioniot.com/omega2/packages/))
 
 ## Multi-Core Compilation
@@ -209,14 +228,23 @@ To **significantly reduce compile time**, you can configure the build system for
 python scripts/onion-setup-build.py -c .config.O2-minimum
 ```
 
+> Learn more about changing the build system configuration in the [appendix](#working-with-the-build-system-configuration-file).
+
 ## Where to Find the Compile Output
 
 ### Firmware Images
 
 Firmware images can be found at `bin/targets/ramips/mt76x8/`:
 
-* `bin/targets/ramips/mt76x8/openwrt-ramips-mt76x8-omega2-squashfs-sysupgrade.bin` - for the Omega2 and Omega2S
-* `bin/targets/ramips/mt76x8/openwrt-ramips-mt76x8-omega2p-squashfs-sysupgrade.bin` - for the Omega2+ and Omega2S+
+| Devices            | Product SKU              | Firmware Image                                           |
+|--------------------|--------------------------|----------------------------------------------------------|
+| Omega2 & Omega2S   | OM-O2 & OM-O2S           | openwrt-ramips-mt76x8-omega2-squashfs-sysupgrade.bin     |
+| Omega2+ & Omega2S+ | OM-O2P & OM-O2SP         | openwrt-ramips-mt76x8-omega2p-squashfs-sysupgrade.bin    |
+| Omega2 Pro         | OM-O2PRO                 | openwrt-ramips-mt76x8-omega2pro-squashfs-sysupgrade.bin  |
+| Omega2 LTE         | OM-O2LTE-NA & OM-O2LTE-G | openwrt-ramips-mt76x8-omega2lte-squashfs-sysupgrade.bin  |
+| Omega2 Dash        | OM-O2DASH                | openwrt-ramips-mt76x8-omega2dash-squashfs-sysupgrade.bin |
+
+To learn more about compiling images for the Omega2 LTE and Omega2 Dash, see the [appendix](#working-with-the-build-system-configuration-file).
 
 ### Software Packages
 
@@ -434,7 +462,32 @@ In addition to the firmware API, you will also need a firmware repo to hold the 
 
 ---
 
+# Contributing
+
+Contributions are welcome!
+
+We'll be following the OpenWRT contribution guidelines:
+
+To help keep the codebase consistent and readable,
+and to help people review your contribution,
+we ask you to follow the rules you find in the wiki at this link
+https://openwrt.org/submitting-patches
+
+## Package Requests
+
+We will not be accepting any contributions that just enable compilation of software packages.
+
+You can instead try enabling the OpenWRT package repos on your Omega2 to install the software package you need. 
+
+More info on that here: http://docs.onion.io/omega2-docs/using-opkg.html#you-dont-have-a-package-i-wantneed
+
 # Appendix
+
+* [Notes on the Build System](#notes-on-the-build-system)
+* [Working with the Build System Configuration File](#working-with-the-build-system-configuration-file)
+  + [Available Configuration Files](#available-configuration-files)
+  + [Changing Configuration Examples](#changing-configuration-examples)
+* [Additional Reading](#additional-reading)
 
 ## Notes on the Build System
 
@@ -448,6 +501,43 @@ In addition to the firmware API, you will also need a firmware repo to hold the 
 * This build system generates firmware for the M7688 SoC with Onion's Enhanced Warp Core WiFi driver
 	* It is available as an [OpenWRT package](https://github.com/OnionIoT/OpenWRT-Packages/tree/openwrt-18.06/wifi-warp-core) for systems running Linux Kernel 4.14.81
 		* **See [this post for more details on the Warp Core](https://onion.io/2bt-brand-new-os-release/)**
+
+## Working with the Build System Configuration File
+
+The `.config` file holds all of the configuration for the build system: which platform and device to build for, which packages to build, which packages should be included in the firmware image, etc.
+
+After completing [Step 1]((#step-1-preparing-the-build-system)) in this guide, you'll notice the `.config` file is a symlink.
+
+The `onion-setup-build.py` script can be used to point to several pre-made configuration files:
+
+```
+python scripts/onion-setup-build.py -c <CONFIG FILE>
+```
+
+> Also try running `python scripts/onion-setup-build.py --help` to see the usage info
+
+### Available Configuration Files
+
+| Configuration File | Creates Firmware Images for | Notes                                                                                                                       |
+|--------------------|-----------------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| `.config.O2`         | Omega2, Omega2+, Omega2 Pro | Baseline configuration file for the Omega2. Also compiles all software packages that are included in the Onion Package Repo |
+| `.config.O2-minimum` | Omega2, Omega2+, Omega2 Pro | Quick minimum build. Only compiles software packages that are included in the firmware                                      |
+| `.config.O2LTE`      | Omega2 LTE                  | Configured to create images and required packages for the Omega2 LTE device                                                 |
+| `.config.O2Dash`     | Omega2 Dash                 | Configured to create images and required packages for the Omega2 Dash device                                                |
+
+### Changing Configuration Examples
+
+To compile firmware images for the **Omega2 LTE**, run the following and then [compile the build system](#the-compile-command):
+
+```
+python scripts/onion-setup-build.py -c .config.O2LTE
+```
+
+To compile firmware images for the **Omega2 Dash**, run the following and then [compile the build system](#the-compile-command):
+
+```
+python scripts/onion-setup-build.py -c .config.O2Dash
+```
 
 ## Additional Reading
 

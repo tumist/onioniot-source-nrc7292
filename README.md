@@ -282,12 +282,14 @@ Now that you've successfully prepared and compiled the build system, you're read
 What's covered in this step:
 
 * [Choosing which Packages to Include in the Firmware](#choosing-which-packages-to-include-in-the-firmware)
-	+ [Tip: Reducing Firmware Image Size](#tip-reducing-firmware-image-size)
-	+ [Tip: Kernel Modules](#tip-kernel-modules)
-	+ [Tip: Custom Web Apps or Pages](#tip-custom-web-apps-or-pages)
+  + [Tip: Reducing Firmware Image Size](#tip-reducing-firmware-image-size)
+  + [Tip: Kernel Modules](#tip-kernel-modules)
+  + [Tip: Custom Web Apps or Pages](#tip-custom-web-apps-or-pages)
 * [Adding Custom Files to the Firmware Image](#adding-custom-files-to-the-firmware-image)
 * [Making your Own Software Packages](#making-your-own-software-packages)
-	+ [Examples of Package Makefiles](#examples-of-package-makefiles)
+  + [Package Feeds](#package-feeds)
+  + [Software Package Makefiles](#software-package-makefiles)
+  + [Examples of Package Makefiles](#examples-of-package-makefiles)
 
 **Refer to [Step 2: Compiling the Build System](#step-2-compiling-the-build-system) for info on building and debugging.**
 
@@ -374,10 +376,24 @@ Benefits:
 * Easy to update the application - just use the [opkg package manager](http://docs.onion.io/omega2-docs/using-opkg.html) on the device
 * Repeatable process for building your application
 
+### Package Feeds
+
 Two options for making your own package:
 
-1. Add it to one of the existing package feeds *Quick to get up and running, but it's generally a good idea to version control your package makefiles*
-1. Create your own package feed *Needs more work to get set up but is more proper*
+1. Create your own package feed
+  * Pro: Proper and maintainable - will make for easy firmware builds and easier future development
+  * Pro: Flexible - feed source code can be version controlled, zipped up, or even just local files
+  * Con: Needs more up-front work to get set up
+1. Add it to one of the existing package feeds
+  * Pro: Quick to get up and running
+  * Con: Less maintainable and robust - It's generally a good idea to version control your package makefiles for repeatability and future development
+
+For more info on working with feeds, see the [OpenWRT feed documentation](https://openwrt.org/docs/guide-developer/feeds). Specifically, check out these sections:
+
+* [Feed configuration](https://openwrt.org/docs/guide-developer/feeds#feed_configuration)
+* [Custom feeds](https://openwrt.org/docs/guide-developer/feeds#custom_feeds)
+
+### Software Package Makefiles
 
 Once you've sorted out your feed, you'll need to create a **Package Makefile**. The Package Makefile acts like a build recipe for your package. It defines:
 
@@ -477,7 +493,7 @@ https://openwrt.org/submitting-patches
 
 We will not be accepting any contributions that just enable compilation of software packages.
 
-You can instead try enabling the OpenWRT package repos on your Omega2 to install the software package you need. 
+You can instead try enabling the OpenWRT package repos on your Omega2 to install the software package you need.
 
 More info on that here: http://docs.onion.io/omega2-docs/using-opkg.html#you-dont-have-a-package-i-wantneed
 

@@ -381,12 +381,12 @@ Benefits:
 Two options for making your own package:
 
 1. Create your own package feed
-  * Pro: Proper and maintainable - will make for easy firmware builds and easier future development
-  * Pro: Flexible - feed source code can be version controlled, zipped up, or even just local files
-  * Con: Needs more up-front work to get set up
-1. Add it to one of the existing package feeds
-  * Pro: Quick to get up and running
-  * Con: Less maintainable and robust - It's generally a good idea to version control your package makefiles for repeatability and future development
+    * Pro: Proper and maintainable - will make for easy firmware builds and easier future development
+    * Pro: Flexible - feed source code can be version controlled, zipped up, or even just local files
+    * Con: Needs more up-front work to get set up
+2. Add it to one of the existing package feeds
+    * Pro: Quick to get up and running
+    * Con: Less maintainable and robust - It's generally a good idea to version control your package makefiles for repeatability and future development
 
 For more info on working with feeds, see the [OpenWRT feed documentation](https://openwrt.org/docs/guide-developer/feeds). Specifically, check out these sections:
 

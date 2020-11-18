@@ -222,6 +222,11 @@ Initial firmware sent to be flashed at the factory
 ### Build Notes
 Defining the changes in each build. *Note that if a number is missing, that build failed the deployment process.*
 
+#### b245
+*Nov 18, 2020*
+
+* Update to adc-exp package - fix for incorrect path to sleep utility
+
 #### b244
 *July 14, 2020*
 

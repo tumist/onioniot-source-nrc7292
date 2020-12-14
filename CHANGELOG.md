@@ -222,6 +222,11 @@ Initial firmware sent to be flashed at the factory
 ### Build Notes
 Defining the changes in each build. *Note that if a number is missing, that build failed the deployment process.*
 
+#### b246
+*Dec 14, 2020*
+
+* Enabled POSIX Message Queues in the kernel
+
 #### b245
 *Nov 18, 2020*
 

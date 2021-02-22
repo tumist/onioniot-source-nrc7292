@@ -27,6 +27,16 @@ The build number will continuously increment over the course of development.
 ### Versions
 Definining the differences in each version change
 
+#### 0.3.3
+
+Enhancements:
+
+* oupgrade - more flexible, automatic, and programmable
+* warp core updates
+* optimization for manufacturing
+* enabled POSIX message queues in the kernel
+* Addition of Omega2 LTE and Dash devices
+
 #### 0.3.2
 **Whole Omega2 family on OpenWRT 18.06 based firmware**
 
@@ -221,6 +231,13 @@ Initial firmware sent to be flashed at the factory
 
 ### Build Notes
 Defining the changes in each build. *Note that if a number is missing, that build failed the deployment process.*
+
+#### b247
+*Feb 11, 2021*
+
+**Moving to v0.3.3**
+
+* WiFi warp core update
 
 #### b246
 *Dec 14, 2020*

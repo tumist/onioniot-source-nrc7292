@@ -232,6 +232,11 @@ Initial firmware sent to be flashed at the factory
 ### Build Notes
 Defining the changes in each build. *Note that if a number is missing, that build failed the deployment process.*
 
+#### b248
+*Apr 13, 2021*
+
+* Updated Node-Red package to v1.2.9
+
 #### b247
 *Feb 11, 2021*
 

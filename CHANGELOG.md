@@ -232,6 +232,11 @@ Initial firmware sent to be flashed at the factory
 ### Build Notes
 Defining the changes in each build. *Note that if a number is missing, that build failed the deployment process.*
 
+#### b249
+*Apr 20, 2021*
+
+* Added kmod-usb-net-asix to Onion package repo
+
 #### b248
 *Apr 13, 2021*
 

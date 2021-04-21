@@ -232,6 +232,11 @@ Initial firmware sent to be flashed at the factory
 ### Build Notes
 Defining the changes in each build. *Note that if a number is missing, that build failed the deployment process.*
 
+#### b250
+*Apr 21, 2021*
+
+* Fixed issue - now correctly compiling lv_micropython
+
 #### b249
 *Apr 20, 2021*
 

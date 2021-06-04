@@ -232,6 +232,11 @@ Initial firmware sent to be flashed at the factory
 ### Build Notes
 Defining the changes in each build. *Note that if a number is missing, that build failed the deployment process.*
 
+#### b251
+*Jun 4, 2021*
+
+* Updated p44-ledchain kernel module and utility to v6, added p44ledchaintest testing program
+
 #### b250
 *Apr 21, 2021*
 

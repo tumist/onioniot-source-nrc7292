@@ -232,6 +232,11 @@ Initial firmware sent to be flashed at the factory
 ### Build Notes
 Defining the changes in each build. *Note that if a number is missing, that build failed the deployment process.*
 
+#### b253
+*Feb 8, 2022*
+
+* Updated omega2-base package self reporting script to include a checksum 
+
 #### b252
 *Jan 27, 2022*
 

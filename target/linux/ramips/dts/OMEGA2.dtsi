@@ -131,6 +131,7 @@
 	};
 
 	spidev@1 {
+                status = "disabled";
 		#address-cells = <1>;
 		#size-cells = <1>;
 		compatible = "rohm,dh2228fv";

@@ -46,7 +46,8 @@ PKG_DRIVERS = \
 	rtl8192ce rtl8192se rtl8192de rtl8192cu rtl8821ae \
 	rtl8xxxu \
 	wlcore wl12xx wl18xx \
-	zd1211rw
+	zd1211rw \
+	nrc7292
 
 PKG_CONFIG_DEPENDS:= \
 	CONFIG_PACKAGE_kmod-mac80211 \
@@ -1563,7 +1564,13 @@ define KernelPackage/zd1211rw
   AUTOLOAD:=$(call AutoProbe,zd1211rw)
 endef
 
-
+define KernelPackage/nrc7292
+  $(call KernelPackage/mac80211/Default)
+  TITLE:=Newracom 802.11ah Wi-Fi halow driver
+  DEPENDS+= +TARGET_bcm27xx:kmod-spi-bcm2835 +kmod-mac80211
+  FILES:=$(PKG_BUILD_DIR)/drivers/net/wireless/newracom/nrc7292/nrc7292.ko
+  AUTOLOAD:=$(call AutoProbe,nrc7292)
+endef
 
 config_package=$(if $(CONFIG_PACKAGE_kmod-$(1)),m)
 
@@ -1591,6 +1598,7 @@ config-y:= \
 	WLAN_VENDOR_ST \
 	WLAN_VENDOR_TI \
 	WLAN_VENDOR_ZYDAS \
+	WLAN_VENDOR_NEWRACOM \
 
 config-$(call config_package,cfg80211) += CFG80211
 
@@ -1737,6 +1745,7 @@ config-$(call config_package,wl12xx) += WL12XX
 config-$(call config_package,wl18xx) += WL18XX
 config-y += WL_TI WILINK_PLATFORM_DATA
 config-$(call config_package,zd1211rw) += ZD1211RW
+config-$(call config_package,nrc7292) += NRC7292
 config-$(call config_package,rsi91x) += RSI_91X
 config-$(call config_package,rsi91x-usb) += RSI_USB
 config-$(call config_package,rsi91x-sdio) += RSI_SDIO
@@ -1785,6 +1794,7 @@ define Build/Prepare
 	$(TAR) -C $(PKG_BUILD_DIR) -xzf $(DL_DIR)/$(IPW2100_NAME)-$(IPW2100_VERSION).tgz
 	$(TAR) -C $(PKG_BUILD_DIR) -xzf $(DL_DIR)/$(IPW2200_NAME)-$(IPW2200_VERSION).tgz
 	$(TAR) -C $(PKG_BUILD_DIR) -xjf $(DL_DIR)/$(ZD1211FW_NAME)-$(ZD1211FW_VERSION).tar.bz2
+	$(TAR) -C $(PKG_BUILD_DIR) --overwrite -xjf $(DL_DIR)/newracom-openwrt-21.02.1-backports-driver.tar.bz2
 	rm -rf \
 		$(PKG_BUILD_DIR)/include/linux/ssb \
 		$(PKG_BUILD_DIR)/include/linux/bcma \
@@ -1893,6 +1903,10 @@ define KernelPackage/zd1211rw/install
 	$(INSTALL_DATA) $(PKG_BUILD_DIR)/$(ZD1211FW_NAME)/zd1211* $(1)/lib/firmware/zd1211
 endef
 
+define KernelPackage/nrc7292/install
+	$(INSTALL_DIR) $(1)/lib/firmware
+	$(INSTALL_DATA) $(PKG_BUILD_DIR)/drivers/net/wireless/newracom/nrc7292/firmware/* $(1)/lib/firmware
+endef
 
 $(eval $(call KernelPackage,adm8211))
 $(eval $(call KernelPackage,airo))
@@ -1971,3 +1985,4 @@ $(eval $(call KernelPackage,wlcore))
 $(eval $(call KernelPackage,wl12xx))
 $(eval $(call KernelPackage,wl18xx))
 $(eval $(call KernelPackage,zd1211rw))
+$(eval $(call KernelPackage,nrc7292))
